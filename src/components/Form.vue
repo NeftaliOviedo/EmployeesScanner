@@ -99,6 +99,7 @@ export default {
         localStorage.setItem('punchesdb', JSON.stringify(this.db));
     },
     saveNwePunch() {
+        if(!this.db) this.db = [];
         this.db.push({name: this.dataPunch.name, date:this.dataPunch.date, breaks:2, lunch: 1, types: [{type: this.dataPunch.type, hour: this.dataPunch.hour, timeAgo:""}]})
     },
     restrictions(){
